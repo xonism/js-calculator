@@ -32,7 +32,7 @@ const buttonArray = [ divideButton, multiplyButton, sevenButton, eightButton, ni
 
 const addListenerForNumbers = (element) => {
     element.addEventListener( "click", function() {
-        const isNotSymbolWithZero = isNaN( screen.innerHTML.slice(-2)[0] ) && screen.innerHTML.slice(-2)[1] == 0; // prevents 15000+020=15016 (parsed as base 8)
+        const isNotSymbolWithZero = isNaN( screen.innerHTML.slice(-2)[0] ) && screen.innerHTML.slice(-2)[1] == 0; // prevents 15000+020=15016
         
         if ( screen.innerHTML.length < allowedNumberOfSymbols && screen.innerHTML != errorMessage && !isNotSymbolWithZero ) {
             if ( screen.innerHTML == 0 && screen.innerHTML.length == 1 ) { // "0." also evaluates true in first condition
