@@ -16,16 +16,6 @@ body {
   background-color: var(--dark-color);
 }
 
-th {
-  width: 30px;
-  height: 30px;
-  transition: 0.3s;
-}
-
-td {
-  letter-spacing: 2px;
-}
-
 #page {
   position: fixed;
   top: 0px;
@@ -37,6 +27,13 @@ td {
   justify-content: center;
 }
 
+#screen {
+  text-align: right;
+  overflow: hidden;
+  max-width: 30px;
+  max-height: 30px;
+}
+
 table, th, td {
   border: 2px solid var(--accent-green);
   border-radius: 10px;
@@ -45,8 +42,18 @@ table, th, td {
   overflow: hidden;
 }
 
+table {
+  border-spacing: 5px;
+}
+
 th, td {
   padding: 15px;
+}
+
+th {
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
 }
 
 th:hover {
@@ -54,15 +61,8 @@ th:hover {
   background-color: var(--accent-green);
 }
 
-table {
-  border-spacing: 5px;
-}
-
-#screen {
-  text-align: right;
-  overflow: hidden;
-  max-width: 30px;
-  max-height: 30px;
+td {
+  letter-spacing: 2px;
 }
 
 .icon {
