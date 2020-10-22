@@ -74,6 +74,6 @@ equalsButton.addEventListener( "click", function() {
     }
 }  )
 
-for ( let i = 0; i < buttonArray.length; i++ ) { // creating all listeners (+15 lines saved)
+for ( let i = 0; i < buttonArray.length; i++ ) {
     isNaN( buttonArray[i].innerHTML ) ? addListenerForSymbols( buttonArray[i] ) : addListenerForNumbers( buttonArray[i] );
 }
