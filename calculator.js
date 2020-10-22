@@ -32,14 +32,17 @@ const buttonArray = [ divideButton, multiplyButton, sevenButton, eightButton, ni
 
 const addListenerForNumbers = (element) => {
     element.addEventListener( "click", function() {
-        const isNotSymbolWithZero = isNaN( screen.innerHTML.slice(-2)[0] ) && screen.innerHTML.slice(-2)[1] == 0; // prevents 15000+020=15016
+        const lastTwoSymbolsOnScreen = screen.innerHTML.slice(-2);
+        const isSymbolAndZero = isNaN( lastTwoSymbolsOnScreen[0] ) && lastTwoSymbolsOnScreen[1] == 0; // prevents 15000+020=15016
         
-        if ( screen.innerHTML.length < allowedNumberOfSymbols && screen.innerHTML != errorMessage && !isNotSymbolWithZero ) {
-            if ( screen.innerHTML == 0 && screen.innerHTML.length == 1 ) { // "0." also evaluates true in first condition
-                screen.innerHTML = element.innerHTML;
-            } else {
-                screen.innerHTML += element.innerHTML;
-            }
+        if ( !(screen.innerHTML.length < allowedNumberOfSymbols && screen.innerHTML != errorMessage && !isSymbolAndZero) ) {
+            return;
+        }
+
+        if ( screen.innerHTML == 0 && screen.innerHTML.length == 1 ) { // "0." also evaluates true in first condition
+            screen.innerHTML = element.innerHTML;
+        } else {
+            screen.innerHTML += element.innerHTML;
         }
     } )
 };
@@ -58,7 +61,7 @@ deleteButton.addEventListener( "click", function() {
 
 backButton.addEventListener( "click", function() { // deleting the last number should result in zero, not blank cell
     if ( screen.innerHTML != errorMessage ) {
-        screen.innerHTML.length === 1 ? screen.innerHTML = 0 : screen.innerHTML = screen.innerHTML.slice(0, -1);
+        screen.innerHTML = screen.innerHTML.length === 1 ? 0 : screen.innerHTML.slice(0, -1);
     }
 } )
 
