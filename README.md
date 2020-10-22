@@ -6,4 +6,6 @@
 
 ✨ To fix: conversion to base 8 (15000 + 020 = 15016, currently after "15000 + 0" users are only able to press dot).
 
+✨ To fix: delete old result as user starts typing a new evaluation.
+
 😓 eval() is evil, I know.
