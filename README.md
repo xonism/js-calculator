@@ -1,6 +1,6 @@
 # js-calculator
 
-✨ Created using JavaScript, HTML and CSS.
+🧠 Created using JavaScript, HTML and CSS.
 
 ✨ To fix: ability to add multiple dots (0.00.03). 
 
