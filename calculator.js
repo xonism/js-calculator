@@ -32,10 +32,7 @@ const buttonArray = [ divideButton, multiplyButton, sevenButton, eightButton, ni
 
 const addListenerForNumbers = (element) => {
     element.addEventListener( "click", function() {
-        const lastTwoSymbolsOnScreen = screen.innerHTML.slice(-2);
-        const isSymbolAndZero = isNaN( lastTwoSymbolsOnScreen[0] ) && lastTwoSymbolsOnScreen[1] == 0; // prevents 15000+020=15016
-        
-        if ( !(screen.innerHTML.length < allowedNumberOfSymbols && screen.innerHTML != errorMessage && !isSymbolAndZero) ) {
+        if ( screen.innerHTML.length > allowedNumberOfSymbols || screen.innerHTML = errorMessage) ) {
             return;
         }
 
@@ -43,7 +40,6 @@ const addListenerForNumbers = (element) => {
             screen.innerHTML = element.innerHTML;
         } else {
             screen.innerHTML += element.innerHTML;
-        }
     } )
 };
 
