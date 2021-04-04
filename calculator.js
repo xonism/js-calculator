@@ -6,7 +6,7 @@ const calculator = document.getElementById('calculator').rows;
 const screen = calculator[0].cells[0];
 
 const buttons$ = {
-    delete: calculator[1].cells[0],
+    delete: calculator[1].cells[0], // testing
     divide: calculator[1].cells[1],
     multiply: calculator[1].cells[2],
     back: calculator[1].cells[3],
